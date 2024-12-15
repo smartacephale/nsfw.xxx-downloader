@@ -27,7 +27,7 @@ const userPostsURL = (n, user) =>
 async function getUserPosts(user) {
 	console.log("Fetching user posts...");
 	const posts = [];
-	for (let i = 1; i < 2; i++) {
+	for (let i = 1; i < 100000; i++) {
 		const page = await fetch(userPostsURL(i, user)).then((r) => r.text());
 		if (page.length < 1) break;
 
