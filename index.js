@@ -49,7 +49,7 @@ async function getPostsData(posts) {
 		const page = await fetch(post).then((r) => r.text());
 		const $ = cheerio.load(page);
 
-		const src =
+    const src =
 			$(".sh-section .sh-section__image img").attr("src") ||
 			$(".sh-section .sh-section__image video source").attr("src") ||
 			null;
@@ -78,7 +78,7 @@ async function downloadFiles(data, downloadDir) {
 		try {
 			const response = await fetch(src);
 			if (!response.ok) {
-				console.error(`\nFailed to download ${name}: ${response.statusText}`);
+				console.error(`\nFailed to download ${src}: ${response.statusText}`);
 				continue;
 			}
 
