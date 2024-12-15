@@ -43,13 +43,13 @@ async function getUserPosts(user) {
 }
 
 async function getPostsData(posts) {
-  console.log("Fetching posts data...");
+	console.log("Fetching posts data...");
 	const data = [];
 	for (const post of posts) {
 		const page = await fetch(post).then((r) => r.text());
 		const $ = cheerio.load(page);
 
-    const src =
+		const src =
 			$(".sh-section .sh-section__image img").attr("src") ||
 			$(".sh-section .sh-section__image video source").attr("src") ||
 			null;
@@ -91,12 +91,12 @@ async function downloadFiles(data, downloadDir) {
 				fileStream.on("finish", resolve);
 			});
 
-      process.stdout.write(`\rDownloading files: ${index + 1}/${data.length}`);
+			process.stdout.write(`\rDownloading files: ${index + 1}/${data.length}`);
 		} catch (error) {
 			console.error(`\nError downloading ${name}:`, error.message);
 		}
 	}
-  console.log("");
+	console.log("");
 }
 
 async function run() {
