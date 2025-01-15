@@ -1,4 +1,7 @@
-## nsfw.xxx downloader
+## Repo moved here:
+https://github.com/smartacephale/coomer-downloader
+
+----------------------------------------------------------
 
 Downloads nsfw content of reddit user.
 
